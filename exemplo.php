@@ -1,3 +1,19 @@
+Um foreach que lÊ os dados que vem do banco onde é gerado um card com as informações do array,
+e nesse card existe um link onde aciona uma função JS onclick chamada getData() que recebe como argumento os valores daquele card do foreach
+e passa para a função JS que insere esses dados no Modal... porém aleatoriamente por algum motivo as vezes não funciona e não é exibido nenhum erro.
+
+<a class="custom-card" href="#" data-toggle="modal" data-target="#productDescription" onClick="getData('{{ $product->id }}', '{{ $product->name }}', '{{ $product->price }}', '{{ $product->short_description }}', '{{ $product->long_description }}', '{{ $product->image }}')">
+    
+<script type="text/javascript">
+    function getData(id, name, price, short_description, long_description, image) {
+        document.getElementById('modalProductName').innerHTML = name;
+        document.getElementById('modalProducImage').src= '/assets/image/product/uploads/' + image;
+        document.getElementById('modalProductLongDescription').innerHTML = long_description;
+    }
+</script>
+
+
+
 <!-------- container -------->
 <div class="container">
     <div class="row mt-4">
